@@ -60,7 +60,7 @@ int read(char S[])
 
 int length(char S[])
 {
-    int i = 0;
+    int i;
     while (S[i])
         i++;
     return i;
@@ -82,7 +82,7 @@ k = 4
 S = My name is Antoun Yaacoub
 k = 5
 
-s
+
 Output:
 -------
 n yM emaA siuotnaY nuocab
