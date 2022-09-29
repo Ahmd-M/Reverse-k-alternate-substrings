@@ -36,12 +36,13 @@ void treatment_2(char portion[], char S[], int loc)
 void treatment(char S[], int k)
 {
     char portion[k]; // substring
-    for (int i = 0; S[i]; i++)
+    for (int i = 0, u=0; S[i]; i++)
     {
         portion[i % k] = S[i];
-        if ((i + 1) % k == 0 || S[i + 1] == '\0')
+        u = i+1;
+        if (u % k == 0 || S[u] == '\0')
         {
-            treatment_2(portion, S, i + 1); // Reverses "portion" & copies it to "S"
+            treatment_2(portion, S, u); // Reverses "portion" & copies it to "S" from index u-k to u
             clear(portion);
         }
     }
