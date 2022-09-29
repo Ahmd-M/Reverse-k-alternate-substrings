@@ -16,7 +16,7 @@ void main()
 
 void treatment_2(char portion[], char S[], int loc)
 {
-    // Reverse portion
+    // Reverse "portion"
     char aux;
     int i = 0, k = length(portion), j = k - 1;
 
@@ -27,7 +27,7 @@ void treatment_2(char portion[], char S[], int loc)
         portion[i++] = aux;
     }
 
-    // Copy portion to S - (replace old portion with new portion)
+    // Copy "portion" to S - (replaces substring with its reverse)
     int start = loc - k, end = loc;
     for (i = start; i < end; i++)
         S[i] = portion[i - start];
@@ -35,19 +35,19 @@ void treatment_2(char portion[], char S[], int loc)
 
 void treatment(char S[], int k)
 {
-    char por[k]; // portion
+    char portion[k]; // substring
     for (int i = 0; S[i]; i++)
     {
-        por[i % k] = S[i];
+        portion[i % k] = S[i];
         if ((i + 1) % k == 0 || S[i + 1] == '\0')
         {
-            treatment_2(por, S, i + 1); // Reverse portion & copy it to S}
-            clear(por);
+            treatment_2(portion, S, i + 1); // Reverses "portion" & copies it to "S"
+            clear(portion);
         }
     }
 }
 
-int read(char S[])
+int read(char S[]) // Takes input (string S + integer K)
 {
     gets(S);
     int K;
@@ -58,7 +58,7 @@ int read(char S[])
     return K;
 }
 
-int length(char S[])
+int length(char S[]) // Returns length of a string
 {
     int i = 0;
     while (S[i])
@@ -66,11 +66,12 @@ int length(char S[])
     return i;
 }
 
-void clear(char S[])
+void clear(char S[]) // Clears a string <==> all elements = '\0'
 {
     for (int i = 0; S[i]; i++)
         S[i] = '\0';
 }
+
 
 /*
 
