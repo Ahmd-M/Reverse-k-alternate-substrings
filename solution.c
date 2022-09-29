@@ -42,7 +42,7 @@ void treatment(char S[], int k)
         u = i+1;
         if (u % k == 0 || S[u] == '\0')
         {
-            treatment_2(portion, S, u); // Reverses "portion" & copies it to "S" from index u-k to u
+            treatment_2(portion, S, u); // Reverses "portion" & copies it to "S" from index u-k to u-1
             clear(portion);
         }
     }
